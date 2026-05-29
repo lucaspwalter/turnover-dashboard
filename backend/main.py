@@ -1,5 +1,6 @@
 import uvicorn
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.dashboard import router as dashboard_router
 from app.api.employees import router as employees_router
@@ -8,6 +9,12 @@ from app.db.database import Base, engine
 from app.models import Employee, EmployeeEvent, TurnoverScore
 
 app = FastAPI(title="Turnover Dashboard API")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.include_router(dashboard_router, prefix="/api")
 app.include_router(employees_router, prefix="/api")
 app.include_router(scores_router, prefix="/api")
