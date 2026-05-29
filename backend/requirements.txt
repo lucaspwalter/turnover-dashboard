@@ -4,3 +4,4 @@ sqlalchemy
 pandas
 apscheduler
 python-multipart
+psycopg2-binary
