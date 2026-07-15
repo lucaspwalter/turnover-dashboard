@@ -1,6 +1,8 @@
 # Turnover Dashboard
 
-## What it is
+An employee turnover risk dashboard with explainable scoring and department-level insights.
+
+## Overview
 
 Companies lose money when good employees resign before leadership notices warning signs. Turnover creates costs through hiring, training, lost productivity, and direct impact on team morale.
 
@@ -11,7 +13,7 @@ This dashboard helps managers identify employees with a higher risk of leaving b
 - Dashboard: https://turnover-dashboard-pi.vercel.app
 - API: https://turnover-dashboard-production-2a7a.up.railway.app/docs
 
-## How the scoring engine works
+## Features
 
 Each employee receives a score from 0 to 100 based on six factors:
 
@@ -24,13 +26,13 @@ Each employee receives a score from 0 to 100 based on six factors:
 
 Score below 40 = Low Risk. From 40 to 70 = Medium Risk. Above 70 = High Risk.
 
-## Technologies
+## Tech Stack
 
 - Backend: Python, FastAPI, SQLAlchemy, PostgreSQL
 - Frontend: React, Recharts
 - Deployment: Railway (backend), Vercel (frontend)
 
-## Running locally
+## Getting Started
 
 ### Quick option with Docker
 
@@ -85,7 +87,7 @@ npm install
 npm start
 ```
 
-## Project structure
+## Project Structure
 
 ```text
 turnover-dashboard/
@@ -107,3 +109,7 @@ turnover-dashboard/
 │   └── package.json      # Frontend dependencies and scripts
 └── README.md
 ```
+
+## License
+
+Licensed under the MIT License. See `LICENSE`.
