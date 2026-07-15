@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://turnover-dashboard-production-2a7a.up.railway.app/api',
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8000/api',
 });
 
 export default api;

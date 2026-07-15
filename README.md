@@ -32,6 +32,18 @@ Score abaixo de 40 = Baixo Risco. Entre 40 e 70 = Médio Risco. Acima de 70 = Al
 
 ## Como rodar localmente
 
+### Opção rápida com Docker
+
+```bash
+git clone https://github.com/lucaspwalter/turnover-dashboard.git
+cd turnover-dashboard
+docker compose up
+```
+
+Acesse `http://localhost:3000`. API: `http://localhost:8000/docs`.
+
+### Instalação manual
+
 1. Clone o repositório:
 
 ```bash
