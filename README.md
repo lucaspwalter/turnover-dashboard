@@ -1,38 +1,38 @@
-# Dashboard de Turnover
+# Turnover Dashboard
 
-## O que é
+## What it is
 
-Empresas perdem dinheiro quando bons funcionários pedem demissão sem que a liderança perceba os sinais com antecedência. Turnover gera custo com contratação, treinamento, perda de produtividade e impacto direto no clima do time.
+Companies lose money when good employees resign before leadership notices warning signs. Turnover creates costs through hiring, training, lost productivity, and direct impact on team morale.
 
-Este dashboard ajuda gestores a identificar funcionários com maior risco de saída antes que o pedido de demissão aconteça. A ferramenta cruza dados de salário, tempo de casa, promoções, aumentos, faltas e advertências para gerar um score de risco claro e acionável.
+This dashboard helps managers identify employees with a higher risk of leaving before they resign. It combines salary, tenure, promotions, raises, absences, and warnings to generate a clear, actionable risk score.
 
-## Demonstração
+## Demo
 
-- Link do dashboard: https://turnover-dashboard-pi.vercel.app
-- Link da API: https://turnover-dashboard-production-2a7a.up.railway.app/docs
+- Dashboard: https://turnover-dashboard-pi.vercel.app
+- API: https://turnover-dashboard-production-2a7a.up.railway.app/docs
 
-## Como funciona a engine de score
+## How the scoring engine works
 
-Cada funcionário recebe um score de 0 a 100 baseado em 6 fatores:
+Each employee receives a score from 0 to 100 based on six factors:
 
-- Tempo sem promoção maior que 2 anos: 20 pontos
-- Salário abaixo da média do cargo: 20 pontos
-- Faltas acima de 3 nos últimos 12 meses: 15 pontos
-- Tempo de casa menor que 1 ano: 15 pontos
-- Advertências nos últimos 12 meses: 15 pontos
-- Sem aumento nos últimos 12 meses: 15 pontos
+- More than two years without a promotion: 20 points
+- Salary below the role average: 20 points
+- More than three absences in the last 12 months: 15 points
+- Less than one year at the company: 15 points
+- Warnings in the last 12 months: 15 points
+- No raise in the last 12 months: 15 points
 
-Score abaixo de 40 = Baixo Risco. Entre 40 e 70 = Médio Risco. Acima de 70 = Alto Risco.
+Score below 40 = Low Risk. From 40 to 70 = Medium Risk. Above 70 = High Risk.
 
-## Tecnologias
+## Technologies
 
-- Back-end: Python, FastAPI, SQLAlchemy, PostgreSQL
-- Front-end: React, Recharts
-- Deploy: Railway (back-end), Vercel (front-end)
+- Backend: Python, FastAPI, SQLAlchemy, PostgreSQL
+- Frontend: React, Recharts
+- Deployment: Railway (backend), Vercel (frontend)
 
-## Como rodar localmente
+## Running locally
 
-### Opção rápida com Docker
+### Quick option with Docker
 
 ```bash
 git clone https://github.com/lucaspwalter/turnover-dashboard.git
@@ -40,18 +40,18 @@ cd turnover-dashboard
 docker compose up
 ```
 
-Acesse `http://localhost:3000`. API: `http://localhost:8000/docs`.
+Open `http://localhost:3000`. API: `http://localhost:8000/docs`.
 
-### Instalação manual
+### Manual installation
 
-1. Clone o repositório:
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/lucaspwalter/turnover-dashboard.git
 cd turnover-dashboard
 ```
 
-2. Crie e ative o ambiente virtual no diretório `backend`:
+2. Create and activate the virtual environment inside `backend`:
 
 ```bash
 cd backend
@@ -59,25 +59,25 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-3. Instale as dependências:
+3. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Rode a API:
+4. Run the API:
 
 ```bash
 python3 main.py
 ```
 
-5. Acesse a documentação da API:
+5. Open the API documentation:
 
 ```text
 http://localhost:8000/docs
 ```
 
-6. Rode o frontend em outro terminal:
+6. Run the frontend in another terminal:
 
 ```bash
 cd frontend
@@ -85,25 +85,25 @@ npm install
 npm start
 ```
 
-## Estrutura do projeto
+## Project structure
 
 ```text
 turnover-dashboard/
 ├── backend/
 │   ├── app/
-│   │   ├── api/          # Rotas FastAPI: funcionários, scores e dashboard
-│   │   ├── db/           # Configuração do banco de dados
-│   │   ├── models/       # Modelos SQLAlchemy
-│   │   ├── schemas/      # Schemas Pydantic
-│   │   └── services/     # Regras de negócio, incluindo engine de score
-│   ├── main.py           # Entrada da API FastAPI
-│   ├── seed.py           # Popula o banco com dados fictícios
-│   └── requirements.txt  # Dependências do back-end
+│   │   ├── api/          # FastAPI routes: employees, scores, and dashboard
+│   │   ├── db/           # Database configuration
+│   │   ├── models/       # SQLAlchemy models
+│   │   ├── schemas/      # Pydantic schemas
+│   │   └── services/     # Business rules, including the scoring engine
+│   ├── main.py           # FastAPI entry point
+│   ├── seed.py           # Populates the database with sample data
+│   └── requirements.txt  # Backend dependencies
 ├── frontend/
 │   ├── src/
-│   │   ├── components/   # Cards, gráfico por departamento e tabela de ranking
-│   │   ├── api.js        # Cliente Axios da API
-│   │   └── App.jsx       # Página principal do dashboard
-│   └── package.json      # Dependências e scripts do front-end
+│   │   ├── components/   # Cards, department chart, and ranking table
+│   │   ├── api.js        # Axios API client
+│   │   └── App.jsx       # Main dashboard page
+│   └── package.json      # Frontend dependencies and scripts
 └── README.md
 ```
