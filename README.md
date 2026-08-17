@@ -1,40 +1,40 @@
-# Turnover Dashboard
+# Painel de rotatividade
 
-An employee turnover risk dashboard with explainable scoring and department-level insights.
+Um painel de risco de rotatividade de funcionários com pontuação explicável e insights em nível de departamento.
 
-## Overview
+## Visão geral
 
-Companies lose money when good employees resign before leadership notices warning signs. Turnover creates costs through hiring, training, lost productivity, and direct impact on team morale.
+As empresas perdem dinheiro quando bons funcionários se demitem antes que a liderança perceba sinais de alerta. A rotatividade cria custos por meio de contratação, treinamento, perda de produtividade e impacto direto no moral da equipe.
 
-This dashboard helps managers identify employees with a higher risk of leaving before they resign. It combines salary, tenure, promotions, raises, absences, and warnings to generate a clear, actionable risk score.
+Este painel ajuda os gerentes a identificar os funcionários com maior risco de saída antes de pedirem demissão. Combina salário, estabilidade, promoções, aumentos, ausências e advertências para gerar uma pontuação de risco clara e acionável.
 
-## Demo
+## Demonstração
 
 - Dashboard: https://turnover-dashboard-pi.vercel.app
 - API: https://turnover-dashboard-production-2a7a.up.railway.app/docs
 
-## Features
+## Características
 
-Each employee receives a score from 0 to 100 based on six factors:
+Cada funcionário recebe uma pontuação de 0 a 100 com base em seis fatores:
 
-- More than two years without a promotion: 20 points
-- Salary below the role average: 20 points
-- More than three absences in the last 12 months: 15 points
-- Less than one year at the company: 15 points
-- Warnings in the last 12 months: 15 points
-- No raise in the last 12 months: 15 points
+- Mais de dois anos sem promoção: 20 pontos
+- Salário abaixo da média da função: 20 pontos
+- Mais de três faltas nos últimos 12 meses: 15 pontos
+- Menos de um ano na empresa: 15 pontos
+- Advertências nos últimos 12 meses: 15 pontos
+- Sem aumento nos últimos 12 meses: 15 pontos
 
-Score below 40 = Low Risk. From 40 to 70 = Medium Risk. Above 70 = High Risk.
+Pontuação abaixo de 40 = Baixo Risco. De 40 a 70 = Risco Médio. Acima de 70 = Alto Risco.
 
-## Tech Stack
+## Pilha de tecnologia
 
-- Backend: Python, FastAPI, SQLAlchemy, PostgreSQL
-- Frontend: React, Recharts
-- Deployment: Railway (backend), Vercel (frontend)
+- Back-end: Python, FastAPI, SQLAlchemy, PostgreSQL
+- Front-end: React, Recharts
+- Implantação: Ferrovia (backend), Vercel (frontend)
 
-## Getting Started
+## Começando
 
-### Quick option with Docker
+### Opção rápida com Docker
 
 ```bash
 git clone https://github.com/lucaspwalter/turnover-dashboard.git
@@ -44,16 +44,16 @@ docker compose up
 
 Open `http://localhost:3000`. API: `http://localhost:8000/docs`.
 
-### Manual installation
+### Instalação manual
 
-1. Clone the repository:
+1. Clone o repositório:
 
 ```bash
 git clone https://github.com/lucaspwalter/turnover-dashboard.git
 cd turnover-dashboard
 ```
 
-2. Create and activate the virtual environment inside `backend`:
+2. Crie e ative o ambiente virtual dentro do `backend`:
 
 ```bash
 cd backend
@@ -61,25 +61,25 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-3. Install dependencies:
+3. Instale dependências:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Run the API:
+4. Execute a API:
 
 ```bash
 python3 main.py
 ```
 
-5. Open the API documentation:
+5. Abra a documentação da API:
 
 ```text
 http://localhost:8000/docs
 ```
 
-6. Run the frontend in another terminal:
+6. Execute o frontend em outro terminal:
 
 ```bash
 cd frontend
@@ -87,7 +87,7 @@ npm install
 npm start
 ```
 
-## Project Structure
+## Estrutura do Projeto
 
 ```text
 turnover-dashboard/
@@ -110,6 +110,6 @@ turnover-dashboard/
 └── README.md
 ```
 
-## License
+## Licença
 
-Licensed under the MIT License. See `LICENSE`.
+Licenciado sob a licença MIT. Veja `LICENÇA`.
